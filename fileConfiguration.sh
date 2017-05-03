@@ -14,10 +14,15 @@ while test $i -le $totalNos
 do
 	no=`sinfo -N | tail -$i | head -n1 | awk '{print $1}'`
 	
-	echo "scontrol update NodeName=$no State=IDLE"
-	scontrol update NodeName=$no State=IDLE
+	echo "scp /etc/slurm/slurm.conf root@$no:/etc/slurm/slurm.conf"
+	scp /etc/slurm/slurm.conf root@$no:/etc/slurm/slurm.conf
 	
+	echo "scp /etc/slurm/slurm.conf root@$no:/usr/local/etc/slurm.conf"
+	scp /etc/slurm/slurm.conf root@$no:/usr/local/etc/slurm.conf
+
 	i=`expr $i + 1`
 done
+
+
 
 
