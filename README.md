@@ -16,3 +16,7 @@ Copia o arquivo de configuração para todos os outros nós.
 ### idleNosSlurm.sh
 
 Coloca todos os nos como IDLE
+
+### sbatch.sh
+
+Submissão dos jobs com arquivos de erro e log para cada job
